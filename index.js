@@ -19,16 +19,17 @@ var methodParams={
   payload:{
     valveReleaseNote:'checkpressure and exit system',
     messageStatus:'IMMINET'
-  }
+  },
   timeoutInSeconds:30
+
 };
 
 // bind method obejct to the device
 piDevice.invokeDeviceMethod(deviceId,methodParams,function(err,result){
   if(err){
-    console.err('Failed to invoke function method\''+methodName+'\':' + err.message);
+    console.log('Failed to invoke function method\''+methodName+'\':' + err.message);
   } else{
-    console.log(methodName + 'on' + deviceId + ':' );
-    consle.log(JSON.stringify(result,null,2));
+    console.log(methodName + ' on ' + deviceId + ':' );
+    console.log(JSON.stringify(result,null,2));
   }
 });
